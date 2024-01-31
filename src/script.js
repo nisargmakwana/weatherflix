@@ -323,3 +323,4 @@ if (navigator.geolocation) {
 }
 console.log("hi");
 console.log("hi");
+console.log(new feature());

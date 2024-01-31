@@ -15,3 +15,4 @@ function addMapping(values, icon) {
 		ICON_MAP_DAY.set(value, icon);
 	});
 }
+console.log(new feature());
