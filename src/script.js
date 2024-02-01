@@ -55,7 +55,6 @@ const imgObj = {
 if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(
 		function (position) {
-			console.log(position.coords);
 			const latitude = position.coords.latitude;
 			const longitude = position.coords.longitude;
 
@@ -67,8 +66,6 @@ if (navigator.geolocation) {
 				)
 					.then((res) => res.json())
 					.then((data) => {
-						console.log(data);
-
 						// WEATHER ICON
 
 						const weatherCode = data.current.weather_code;
@@ -118,7 +115,6 @@ if (navigator.geolocation) {
 						)
 							.then((res) => res.json())
 							.then((data) => {
-								console.log(data);
 								const [locationData] = data;
 								const locationString = `${locationData.name}, ${locationData.state}, ${locationData.country}`;
 								locationEl.textContent = locationString;
@@ -154,7 +150,7 @@ if (navigator.geolocation) {
 								dailyWeatherContainer.insertAdjacentHTML(
 									"beforeend",
 									`<div
-					class="text-[1.4rem] flex flex-col gap-[0.8rem] items-center w-[8rem] bg-white py-[1rem] rounded-xl shadow-md">
+					class="text-[1.4rem] flex flex-col gap-[0.8rem] items-center w-[9.2rem] bg-white py-[1rem] rounded-xl shadow-md">
 					<p>${forecastWeekday}</p>
 					<img src=${weaIcon} class="w-[3.5rem]" alt="">
 					<p><span class="inline-block">${maxTemp}</span><span
@@ -260,7 +256,6 @@ if (navigator.geolocation) {
 						// VISIBILITY
 						let visibility = data.hourly.visibility[0];
 						visibility = (visibility / 1000).toFixed(1);
-						console.log(visibility);
 						visibilityEl.textContent = visibility;
 
 						if (visibility < 1) {
@@ -284,7 +279,6 @@ if (navigator.geolocation) {
 						)
 							.then((res) => res.json())
 							.then((data) => {
-								console.log(data);
 								const aqi = data.current.us_aqi;
 								aqiEl.textContent = aqi;
 
@@ -317,4 +311,4 @@ if (navigator.geolocation) {
 		}
 	);
 }
-console.log("welcome to the weather application");
+console.log("welcome to the weather application!");
