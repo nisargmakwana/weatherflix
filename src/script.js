@@ -115,17 +115,14 @@ if (navigator.geolocation) {
 						// LOCATION
 
 						fetch(
-							`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`
+							`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=0f4f9905adc9d1f03e48a144cd60c351`
 						)
 							.then((res) => res.json())
 							.then((data) => {
 								console.log(data);
-								const countryCode =
-									`${data.address.country_code}`.toUpperCase();
-								console.log(countryCode);
-								const locationStr = `${data.address.city}, ${data.address.state}, ${countryCode}`;
-
-								locationEl.textContent = locationStr;
+								const [locationData] = data;
+								const locationString = `${locationData.local_names.es}, ${locationData.state}, ${locationData.country}`;
+								locationEl.textContent = locationString;
 							});
 
 						// HOURLY FORECAST
@@ -146,7 +143,7 @@ if (navigator.geolocation) {
 								const minTemp = minTempArray[i];
 								const maxTemp = maxTempArray[i];
 								let weaIcon;
-								console.log(data.current.is_day);
+
 								if (data.current.is_day) {
 									weaIcon = imgObj[ICON_MAP_DAY.get(dailyWeatherCodes[i])];
 								} else {
@@ -321,6 +318,3 @@ if (navigator.geolocation) {
 		}
 	);
 }
-console.log("hi");
-console.log("hi");
-console.log(new feature());
