@@ -318,3 +318,4 @@ if (navigator.geolocation) {
 		}
 	);
 }
+console.log("welcome to the weather application");
