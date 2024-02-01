@@ -311,4 +311,4 @@ if (navigator.geolocation) {
 		}
 	);
 }
-console.log("welcome to the weather application!");
+console.log("Welcome to a quick weather dashboard!");
