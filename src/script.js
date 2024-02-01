@@ -115,7 +115,7 @@ if (navigator.geolocation) {
 						// LOCATION
 
 						fetch(
-							`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=0f4f9905adc9d1f03e48a144cd60c351`
+							`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=0f4f9905adc9d1f03e48a144cd60c351`
 						)
 							.then((res) => res.json())
 							.then((data) => {
