@@ -56,9 +56,8 @@ if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(
 		function (position) {
 			console.log(position.coords);
-			const lat = position.coords.latitude;
-			const lng = position.coords.longitude;
-			console.log(lat, lng);
+			const latitude = position.coords.latitude;
+			const longitude = position.coords.longitude;
 
 			// UPDATING UI FUNCTION
 
@@ -121,7 +120,7 @@ if (navigator.geolocation) {
 							.then((data) => {
 								console.log(data);
 								const [locationData] = data;
-								const locationString = `${locationData.local_names.es}, ${locationData.state}, ${locationData.country}`;
+								const locationString = `${locationData.name}, ${locationData.state}, ${locationData.country}`;
 								locationEl.textContent = locationString;
 							});
 
@@ -155,7 +154,7 @@ if (navigator.geolocation) {
 								dailyWeatherContainer.insertAdjacentHTML(
 									"beforeend",
 									`<div
-					class="text-[1.4rem] flex flex-col gap-[0.8rem]  items-center w-[7.5rem] bg-white py-[1rem] rounded-xl shadow-md">
+					class="text-[1.4rem] flex flex-col gap-[0.8rem] items-center w-[8rem] bg-white py-[1rem] rounded-xl shadow-md">
 					<p>${forecastWeekday}</p>
 					<img src=${weaIcon} class="w-[3.5rem]" alt="">
 					<p><span class="inline-block">${maxTemp}</span><span
@@ -311,7 +310,7 @@ if (navigator.geolocation) {
 							});
 					});
 			};
-			updateUI(lat, lng);
+			updateUI(latitude, longitude);
 		},
 		function () {
 			alert("Couldn't get your location, hit 'Allow' on the popup");
