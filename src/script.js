@@ -86,7 +86,8 @@ if (navigator.geolocation) {
 						appTempEl.textContent = data.current.apparent_temperature;
 
 						// WEEKDAY AND TIME
-						const date = new Date(data.current.time);
+						const date = new Date();
+						console.log(date);
 						const weekDay = Intl.DateTimeFormat("en-us", {
 							weekday: "short",
 						}).format(date);
