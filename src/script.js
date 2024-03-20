@@ -179,7 +179,7 @@ if (navigator.geolocation) {
 							uvStatusEl.textContent = "High";
 						} else if (uv > 7 && uv <= 10) {
 							uvStatusEl.classList.add("text-[#BA0F30]"); // red
-							uvStatusEl.textContent = "Very hgh";
+							uvStatusEl.textContent = "Very high";
 						} else if (uv > 10) {
 							uvStatusEl.classList.add("text-[#603F8B]"); // purple
 							uvStatusEl.textContent = "Extreme";
@@ -200,9 +200,6 @@ if (navigator.geolocation) {
 						} else if (speed > 38 && speed < 49) {
 							windStatusEl.classList.add("text-[#FD7F20]"); // orange
 							windStatusEl.textContent = "Strong breeze";
-						} else if (speed > 49 && speed < 62) {
-							windStatusEl.classList.add("text-[#BA0F30]"); // red
-							windStatusEl.textContent = "Gale";
 						} else if (speed > 49 && speed < 88) {
 							windStatusEl.classList.add("text-[#BA0F30]"); // red
 							windStatusEl.textContent = "Gale";
